@@ -1,0 +1,5 @@
+# Permitir indexação pelo Google e demais crawlers
+User-agent: *
+Allow: /
+
+Sitemap: https://guilhermediasti.web.app/sitemap.xml

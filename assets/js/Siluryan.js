@@ -16,29 +16,21 @@ $(document).ready(function(){
     });
 });
 
-// portfolio carousel
-$('#owl-portfolio').owlCarousel({
-    
-    center: true,
-    margin:30,
-    dots: false,
-    responsiveClass:true,
-    responsive:{
-        0:{
-            items:1,
-            nav:false
-        },
-        600:{
-            items:3,
-            nav:false
-        },
-        1000:{
-            items:4,
-            nav:false,
-            loop:false
+// portfolio carousel (só se existir o markup antigo com vários itens)
+var $owlPortfolio = $('#owl-portfolio');
+if ($owlPortfolio.length) {
+    $owlPortfolio.owlCarousel({
+        center: true,
+        margin: 30,
+        dots: false,
+        responsiveClass: true,
+        responsive: {
+            0: { items: 1, nav: false },
+            600: { items: 3, nav: false },
+            1000: { items: 4, nav: false, loop: false }
         }
-    }
-});
+    });
+}
 
 // testmonial carousel
 $('#owl-testmonial').owlCarousel({
