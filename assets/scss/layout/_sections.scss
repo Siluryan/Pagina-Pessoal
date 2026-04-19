@@ -18,3 +18,355 @@
         color: $white;
     }
 }
+
+// Página pessoal: sobre, credenciais e certificações
+.section-about {
+    text-align: left;
+
+    .section-title {
+        text-align: left;
+    }
+
+    .about-intro-card {
+        position: relative;
+        background: $white;
+        border-radius: 14px;
+        padding: 1.5rem 1.35rem 1.35rem;
+        box-shadow: 0 4px 26px rgba(44, 62, 80, 0.08);
+        border: 1px solid rgba(44, 62, 80, 0.06);
+        overflow: hidden;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, $primary, lighten($primary, 6%), $cyan);
+            opacity: 0.9;
+        }
+
+        .about-lead {
+            color: $gray-700;
+        }
+    }
+
+    .credentials-strip-label {
+        color: $gray-600;
+        font-size: 0.72rem;
+        letter-spacing: 0.07em;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .credentials-pill {
+        box-shadow: 0 1px 2px rgba(44, 62, 80, 0.04);
+    }
+
+    .credentials-pill-accent {
+        box-shadow: 0 2px 8px rgba(23, 162, 184, 0.12);
+    }
+
+    .widget.about-skill-card {
+        border-radius: 14px;
+        margin: 0 0 1rem;
+        padding: 1.1rem 1.15rem;
+        box-shadow: 0 4px 22px rgba(44, 62, 80, 0.07);
+        border: 1px solid rgba(44, 62, 80, 0.07);
+        transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            box-shadow: 0 10px 32px rgba(44, 62, 80, 0.11);
+            transform: translateY(-2px);
+        }
+
+        .icon-wrapper {
+            width: 52px;
+            min-width: 52px;
+            height: 52px;
+            margin-right: 1rem;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 1.35rem;
+            opacity: 1;
+            background: linear-gradient(145deg, rgba($primary, 0.14), rgba($cyan, 0.1));
+            color: darken($primary, 8%);
+        }
+
+        .infos-wrapper {
+            padding: 4px 8px 4px 0;
+        }
+
+        .infos-wrapper h4 {
+            font-size: 1.05rem;
+            letter-spacing: -0.02em;
+        }
+
+        .infos-wrapper p {
+            color: $gray-700;
+            font-size: 0.9rem;
+            line-height: 1.55;
+        }
+    }
+
+    .about-bio .bio-block {
+        border-radius: 12px;
+        padding: 1.25rem 1.35rem;
+        box-shadow: 0 4px 22px rgba(44, 62, 80, 0.06);
+        border: 1px solid rgba(44, 62, 80, 0.07);
+        border-left: 4px solid rgba($primary, 0.65);
+
+        &:nth-child(2) {
+            border-left-color: rgba($cyan, 0.55);
+        }
+    }
+}
+
+.about-lead {
+    font-size: 0.95rem;
+    line-height: 1.55;
+}
+
+.credentials-strip-label {
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+}
+
+.credentials-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-bottom: 0.25rem;
+}
+
+.credentials-pill {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.8rem;
+    line-height: 1.25;
+    border-radius: 999px;
+    border: 1px solid rgba(44, 62, 80, 0.18);
+    background: #fff;
+    color: #2c3e50;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        border-color: rgba(26, 144, 255, 0.45);
+        box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+        color: #127bbe;
+    }
+}
+
+.credentials-pill-accent {
+    border-color: rgba(26, 144, 255, 0.35);
+    background: rgba(26, 144, 255, 0.06);
+    font-weight: 600;
+}
+
+.about-bio {
+    text-align: left;
+}
+
+.bio-block {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    padding: 1rem 1.1rem;
+    background: #fff;
+    border-radius: 0.35rem;
+    border: 1px solid rgba(44, 62, 80, 0.08);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.bio-lang {
+    font-size: 1.35rem;
+    line-height: 1.2;
+    flex-shrink: 0;
+}
+
+.section-certs {
+    .cert-page-header {
+        max-width: 48rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cert-page-eyebrow {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: $gray-600;
+    }
+
+    .cert-page-title {
+        letter-spacing: -0.02em;
+    }
+
+    .cert-section-lead {
+        max-width: 36rem;
+        line-height: 1.6;
+    }
+
+    .cert-cards-row {
+        margin-top: 0.25rem;
+    }
+
+    .cert-card {
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid rgba(44, 62, 80, 0.09);
+        background: $white;
+        box-shadow: 0 4px 18px rgba(44, 62, 80, 0.07);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+        &:hover,
+        &:focus {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 36px rgba(44, 62, 80, 0.12);
+            text-decoration: none;
+        }
+    }
+
+    .cert-card .card-img-top {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        max-height: 200px;
+        border-radius: 0;
+    }
+
+    .cert-card .card-body {
+        padding: 1rem 1.25rem 1.4rem;
+    }
+
+    .cert-card .title {
+        font-size: 1.08rem;
+        line-height: 1.35;
+        margin-top: 0.5rem !important;
+        color: $gray-900;
+    }
+}
+
+.section-certs .cert-card-sub {
+    color: $gray-700;
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.02em;
+}
+
+.btn-catalog {
+    font-weight: 600;
+}
+
+// Portfólio: bloco compacto, texto alinhado ao restante do site
+.section-portfolio {
+    padding: 38px 10px 42px;
+
+    .section-portfolio-heading {
+        margin-bottom: 0.65rem;
+        padding-bottom: 0;
+    }
+
+    .portfolio-github-wrap {
+        max-width: 42rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .portfolio-github-figure {
+        position: relative;
+        display: inline-block;
+        border-radius: 8px;
+        overflow: hidden;
+        line-height: 0;
+        box-shadow: 0 4px 22px rgba(44, 62, 80, 0.12);
+        transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+        /* Textura + ponte de cor na faixa lateral */
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            background-image: repeating-linear-gradient(
+                    -32deg,
+                    rgba(255, 255, 255, 0.04) 0,
+                    rgba(255, 255, 255, 0.04) 1px,
+                    transparent 1px,
+                    transparent 12px
+                ),
+                linear-gradient(
+                    92deg,
+                    transparent 0%,
+                    transparent 30%,
+                    rgba(12, 28, 56, 0.04) 38%,
+                    rgba(16, 38, 72, 0.1) 46%,
+                    rgba(24, 48, 86, 0.16) 52%,
+                    rgba(36, 56, 92, 0.22) 57%,
+                    rgba(52, 64, 98, 0.3) 62%,
+                    rgba(68, 72, 104, 0.38) 68%,
+                    rgba(82, 78, 108, 0.44) 74%,
+                    rgba(92, 86, 112, 0.5) 82%,
+                    rgba(98, 90, 116, 0.54) 92%,
+                    rgba(102, 94, 118, 0.56) 100%
+                );
+        }
+
+        &:hover,
+        &:focus {
+            box-shadow: 0 10px 32px rgba(44, 62, 80, 0.18);
+            transform: translateY(-2px);
+        }
+
+        &:focus {
+            outline: 2px solid rgba(26, 144, 255, 0.55);
+            outline-offset: 3px;
+        }
+
+        img {
+            position: relative;
+            z-index: 0;
+            display: block;
+            max-width: 100%;
+            width: min(100%, 480px);
+            height: auto;
+        }
+    }
+
+    .portfolio-github-copy {
+        margin: 1.1rem auto 0;
+        max-width: 34rem;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: $gray-700;
+        text-align: center;
+    }
+}
+
+// Fundo da secção portfólio: leve gradiente (sobrepõe o cinza “ímpar” genérico)
+#portfolio.section.section-portfolio {
+    background: linear-gradient(
+        165deg,
+        #e4e9f5 0%,
+        #e8ecf8 35%,
+        #eef1fa 70%,
+        #e9edf7 100%
+    );
+}

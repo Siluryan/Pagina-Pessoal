@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="pt-BR"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">	
 	<meta property="og:image" content="https://siluryan.github.io/Pagina-Pessoal/assets/imgs/JsoyQF.jpg">
-	<meta property="og:description" content="Guilherme Dias | Suporte em TI">
-	<meta property="og:url" content="https://siluryan.github.io/Pagina-Pessoal">	
+	<meta property="og:description" content="Guilherme Dias | DevOps, infraestrutura em nuvem e segurança da informação">
+	<meta property="og:url" content="https://guilhermediasti.web.app/">	
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Guilherme Dias — DevOps, infraestrutura em nuvem (AWS), CI/CD, Linux e segurança da informação. Credenciais, certificações e portfólio.">
+    <link rel="canonical" href="https://guilhermediasti.web.app/">
+    <meta name="google-site-verification" content="YWTcXUdqbHqcboXe6tegdt2YobDMiZvKvqE1kE1K9uc">
     <meta name="author" content="Guilherme Dias">     
 	
     <style type="text/css">
         </style>
-    <title>Guilherme Dias | Suporte em TI</title>
+    <title>Guilherme Dias | DevOps e Infraestrutura</title>
 
    <!-- font icons -->
 	<link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
@@ -46,15 +50,6 @@
 	<script src="https://www.google.com/recaptcha/api.js?render=SITE_KEY"></script>   
 </head>
 
-<?php
-if(isset($_POST['submit'])){
-    $url = https://www.google.com/recaptcha/api/siteverify;   
-    $response = $_POST['token_generate'];
-    $remoteip = $_SERVER['REMOTE_ADDR'];
-    $request = file_get_contents($url.'?secret='.$secret.'&response='.$response);
-    $response = json_decode($request);
-?>
-
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
 
     <nav id="scrollspy" class="navbar navbar-light bg-light navbar-expand-lg fixed-top affix" data-spy="affix" data-offset-top="20">
@@ -73,7 +68,7 @@ if(isset($_POST['submit'])){
                         <a class="nav-link" href="#about">Sobre</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#certificacoes">Certificações</a>
+                        <a class="nav-link" href="#certificacoes" title="Certificações e cursos">Certificações</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#portfolio">Portfólio</a>
@@ -94,176 +89,215 @@ if(isset($_POST['submit'])){
     <header id="home" class="header">
         <div class="overlay"></div>
 
-        <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">  
-            <div class="container">
-                <div class="carousel-inner">
-                    <div class="carousel-item">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h1 class="carousel-title"><br> Soluções em Nuvem</h1>
-                            
-                        </div>
+        <div class="hero-stack">
+            <div class="container hero-top">
+                <div class="row align-items-center justify-content-center flex-column flex-md-row">
+                    <div class="col-md-auto text-center hero-profile-col pr-md-4 mb-4 mb-md-0">
+                        <img src="assets/imgs/perfil-guilherme.png" alt="Guilherme Dias" class="hero-profile-photo" width="168" height="168" loading="eager">
+                        <p class="hero-name mb-1">Guilherme Dias</p>
+                        <p class="hero-roles small mb-0">Platform · AWS · Cloud · DevOps · SRE · Infra</p>
                     </div>
-                    <div class="carousel-item active carousel-item-left">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h1 class="carousel-title"><br>Segurança da Informação</h1>
-                            
-                          </div>
-                    </div>
-                    <div class="carousel-item carousel-item-next carousel-item-left">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h1 class="carousel-title"><br> Python e DevOps</h1>
+                    <div class="col hero-carousel-col pl-md-2">
+                        <div id="hero-specialties" class="carousel slide carousel-fade hero-main-carousel" data-ride="carousel" data-interval="5500" aria-label="Especialidades profissionais">
+                            <ol class="carousel-indicators hero-indicators">
+                                <li data-target="#hero-specialties" data-slide-to="0" class="active"></li>
+                                <li data-target="#hero-specialties" data-slide-to="1"></li>
+                                <li data-target="#hero-specialties" data-slide-to="2"></li>
+                                <li data-target="#hero-specialties" data-slide-to="3"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="hero-slide">
+                                        <p class="hero-kicker">Atuação</p>
+                                        <h1 class="hero-slide-title">Nuvem, plataforma e operações</h1>
+                                        <p class="hero-slide-lead">Experiência com AWS e outros provedores, automação entre desenvolvimento e operações, e cuidado com disponibilidade, custo e segurança.</p>
+                                        <a href="#about" class="btn btn-outline-light btn-sm hero-cta">Sobre mim</a>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="hero-slide">
+                                        <p class="hero-kicker">Entrega</p>
+                                        <h1 class="hero-slide-title">CI/CD e infraestrutura reproduzível</h1>
+                                        <p class="hero-slide-lead">Pipelines de integração e entrega, provisionamento e automação para reduzir risco manual e manter ambientes previsíveis.</p>
+                                        <a href="#certificacoes" class="btn btn-outline-light btn-sm hero-cta">Certificações</a>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="hero-slide">
+                                        <p class="hero-kicker">Redes e segurança</p>
+                                        <h1 class="hero-slide-title">Fundamentos para arquitetura e operação</h1>
+                                        <p class="hero-slide-lead">Redes e segurança da informação como apoio ao desenho, à operação e à evolução de sistemas com governança.</p>
+                                        <a href="#certificacoes" class="btn btn-outline-light btn-sm hero-cta">Certificações</a>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="hero-slide">
+                                        <p class="hero-kicker">Credenciais</p>
+                                        <h1 class="hero-slide-title">Certificações verificáveis</h1>
+                                        <p class="hero-slide-lead">AWS Solutions Architect (Associate), Microsoft SC-900, Cisco CCNA e CyberOps. Demais cursos e certificados no catálogo.</p>
+                                        <a href="certify.html" class="btn btn-outline-light btn-sm hero-cta">Catálogo</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev hero-control" href="#hero-specialties" role="button" data-slide="prev" aria-label="Especialidade anterior">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            </a>
+                            <a class="carousel-control-next hero-control" href="#hero-specialties" role="button" data-slide="next" aria-label="Próxima especialidade">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            </a>
                         </div>
                     </div>
                 </div>
-            </div>        
+            </div>
         </div>
 
-       
         <div class="infos container mb-4 mb-md-2">
-            <div class="title">
-                <h6 style="color: rgb(241, 241, 241);">O que acredito</h6><br>                
-                <p style="color: rgb(241, 241, 241);">A agilidade dos negócios só tem a ganhar priorizando o bem-estar das pessoas e a segurança de suas informações</p>
-            </div>
-            
-            <div class="socials text-right">
-                <div class="row justify-content-between">
-                    <div class="col">
-                        <a class="d-block subtitle"><i class="ti-microphone pr-2"></i> (14) 99692-1397</a>
-                        
-                    </div>
-                    
+            <div class="row align-items-end">
+                <div class="col-md-8">
+                    <div class="title">
+                        <h6 style="color: rgb(241, 241, 241);">O que acredito</h6><br>
+                        <p style="color: rgb(241, 241, 241);">A agilidade dos negócios só tem a ganhar priorizando o bem-estar das pessoas e a segurança de suas informações</p>
                     </div>
                 </div>
+                <div class="col-md-4 text-md-right mt-3 mt-md-0">
+                    <a class="d-block subtitle" href="tel:+5514991382135"><i class="ti-microphone pr-2"></i> (14) 99138-2135</a>
+                </div>
             </div>
-        
-        
+        </div>
+
     </header>
     
-    <section class="section" id="about">
+    <section class="section section-about" id="about">
 
         <div class="container">
 
-            <div class="row align-items-center mr-auto">
-                <div class="col-md-4">
-                    <h3 class="section-title">Sobre Mim</h3>
-                    <p>Tive contato com a Computação ainda cedo, mas 
-passei por diversas experiências e lugares que me permitiram escolher 
-esse caminho com maior confiança</p>
-
-                    
-                </div>
-                <div class="col-sm-6 col-md-4 ml-auto">
-                    <div class="widget">
-                        <div class="icon-wrapper">
-                            <i class="ti-calendar"></i>
-                        </div>
-                        <div class="infos-wrapper">
-                            <h4 class="text-primary">10+</h4>
-                            <p>Obtive diversas certificações em Programação e Segurança de Redes para complementar meus estudos</p>
-                        </div>
-                    </div>
-                    <div class="widget">
-                        <div class="icon-wrapper">
-                            <i class="ti-face-smile"></i>
-                        </div>
-                        <div class="infos-wrapper">
-                            <h4 class="text-primary">30+</h4>
-                            <p>Uma linguagem de programação que me inspira é a linguagem Python, e você pode conferir os diversos
-                                algoritmos que desenvolvi
-                            </p>
+            <div class="row align-items-stretch mr-auto about-highlights-row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="about-intro-card h-100">
+                        <h3 class="section-title">Sobre mim</h3>
+                        <p class="about-lead">Profissional com foco em DevOps, com experiência recorrente em AWS e em outros provedores de nuvem, automação e boas práticas. Abaixo há um resumo em português e em inglês, além de atalhos para credenciais e catálogo.</p>
+                        <p class="credentials-strip-label mb-2">Principais credenciais</p>
+                        <div class="credentials-strip" role="navigation" aria-label="Atalhos para certificações">
+                            <a class="credentials-pill" href="#certificacoes">Destaques na página</a>
+                            <a class="credentials-pill" href="https://www.credly.com/badges/eb3d508f-fe99-4cb4-a589-806f33d56c1a/linked_in?t=rpww0y" target="_blank" rel="noopener noreferrer" title="Credly">AWS Solutions Architect</a>
+                            <a class="credentials-pill" href="https://www.credly.com/badges/94b9832a-24fa-48eb-bc72-825cb0f78ca6/linked_in?t=rgb4io" target="_blank" rel="noopener noreferrer">Azure SC-900</a>
+                            <a class="credentials-pill" href="https://www.credly.com/badges/f4ae5954-b0ee-48b4-ac94-8577179764e3/linked_in?t=rdp2ua" target="_blank" rel="noopener noreferrer">CCNA / CyberOps</a>
+                            <a class="credentials-pill" href="certpages/aws.html">Cursos AWS (PDFs)</a>
+                            <a class="credentials-pill" href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=BF69017652E97A0E49EE2FE4B5222ABA72A307D7CC54A9F3A140A27ACC54452E" target="_blank" rel="noopener noreferrer">OCI Security</a>
+                            <a class="credentials-pill" href="certify.html">Catálogo completo</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4">
-                    <div class="widget">
+                <div class="col-sm-6 col-md-4 ml-auto d-flex flex-column">
+                    <div class="widget about-skill-card">
                         <div class="icon-wrapper">
-                            <i class="ti-star"></i>
+                            <i class="ti-medall-alt" aria-hidden="true"></i>
                         </div>
                         <div class="infos-wrapper">
-                            <h4 class="text-primary">Engenharia da Computação</h4>
-                            <p>Sou aluno da UNIVESP e esse curso em especial me deu a oportunidade
-                                de realizar outro sonho que ainda estava pendente, o de aprender Matemática de nível superior
-                            </p>
+                            <h4 class="text-primary">Credenciais</h4>
+                            <p>Trabalho com AWS no desenho e na operação de workloads em nuvem, junto com credenciais em outras plataformas, redes e segurança.</p>
                         </div>
                     </div>
-                    <div class="widget">
+                    <div class="widget about-skill-card">
                         <div class="icon-wrapper">
-                            <i class="ti-user"></i>
+                            <i class="ti-write" aria-hidden="true"></i>
+                        </div>
+                        <div class="infos-wrapper">
+                            <h4 class="text-primary">Python</h4>
+                            <p>Uma linguagem que uso com frequência para automação, integrações e experimentos; boa parte dos projetos está no GitHub.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 d-flex flex-column">
+                    <div class="widget about-skill-card">
+                        <div class="icon-wrapper">
+                            <i class="ti-bookmark-alt" aria-hidden="true"></i>
+                        </div>
+                        <div class="infos-wrapper">
+                            <h4 class="text-primary">Formação</h4>
+                            <p>Graduação em Tecnologia da Informação e Engenharia da Computação (UNIVESP), com base sólida em matemática e sistemas.</p>
+                        </div>
+                    </div>
+                    <div class="widget about-skill-card">
+                        <div class="icon-wrapper">
+                            <i class="ti-linux" aria-hidden="true"></i>
                         </div>
                         <div class="infos-wrapper">
                             <h4 class="text-primary">Linux</h4>
-                            <p>Linux representa tudo aquilo que gostaria de ver em outras áreas,
-                                e dedico uma boa tarde do meu dia no aprofundamento dessa incrível tecnologia
-                            </p>
+                            <p>Ambientes Linux são parte central do meu fluxo de trabalho em infraestrutura, automação e laboratórios.</p>
                         </div>
-                        
-                    
                     </div>
                 </div>
-             </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-lg-10 mx-auto about-bio">
+                    <div class="bio-block">
+                        <span class="bio-lang" aria-hidden="true">🇧🇷</span>
+                        <p class="mb-0">Sou formado em Tecnologia da Informação e Engenharia da Computação, com foco em DevOps e infraestrutura, incluindo AWS e outras nuvens. Possuo experiência prática com pipelines de integração e entrega contínua (CI/CD), ambientes em nuvem e automação de processos, sempre buscando aumentar a eficiência, escalabilidade e confiabilidade dos sistemas. Também tenho uma base sólida em redes e segurança da informação, o que me permite projetar e manter ambientes robustos e seguros. Estou em constante evolução, acompanhando novas tecnologias e boas práticas para entregar soluções de alta qualidade.</p>
+                    </div>
+                    <div class="bio-block">
+                        <span class="bio-lang" aria-hidden="true">🇺🇸</span>
+                        <p class="mb-0" lang="en">I hold a degree in Information Technology and Computer Engineering, with a strong focus on DevOps and infrastructure, including AWS and other cloud providers. I have hands-on experience with CI/CD pipelines, cloud environments, and process automation, always aiming to improve system efficiency, scalability, and reliability. I also have a solid foundation in networking and information security, enabling me to design and maintain secure and resilient systems. I am committed to continuous learning and staying up to date with emerging technologies to deliver high-quality solutions.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="section" id="certificacoes">
-        <div class="container">
-            
-            <h3 class="section-title mb-4">Certificações</h3>
+    <section class="section section-certs" id="certificacoes">
+        <div class="container cert-page-header">
+            <p class="cert-page-eyebrow mb-1">Credenciais</p>
+            <h3 class="section-title mb-2 cert-page-title">Certificações e cursos</h3>
 
-            <div class="row text-center">
+            <div class="row text-center cert-cards-row justify-content-center">
 
-                <div class="col-lg-4">
-                    <a href="https://www.credly.com/badges/e8964d10-c102-4bd7-8dd3-0f3f113ab57b/linked_in?t=re77ie" target="_blank" class="card border-0 text-dark">
-                        <img class="card-img-top" src="assets/imgs/azure.jpg" alt="Microsoft Azure - Fundamentals">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <a href="https://www.credly.com/badges/eb3d508f-fe99-4cb4-a589-806f33d56c1a/linked_in?t=rpww0y" target="_blank" rel="noopener noreferrer" class="card border-0 text-dark cert-card h-100">
+                        <img class="card-img-top" src="certimages/AWS/solutionaa.jpg" alt="AWS Solutions Architect Associate">
                         <span class="card-body">
-                            <h4 class="title mt-4">Microsoft Azure AZ-900</h4>
-                            <p class="xs-font">Fundamentals</p>
+                            <h4 class="title mt-4">AWS Solutions Architect</h4>
+                            <p class="xs-font cert-card-sub">Associate</p>
                         </span>
                     </a>
-                </div>            
-                
-                <div class="col-lg-4">
-                    <a href="https://www.credly.com/badges/f4ae5954-b0ee-48b4-ac94-8577179764e3/linked_in?t=rdp2ua" target="_blank" class="card border-0 text-dark">
-                        <img class="card-img-top" src="assets/imgs/cisco.jpg" alt="CyberOps Cisco Networking Academy">
+                </div>
+
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <a href="https://www.credly.com/badges/94b9832a-24fa-48eb-bc72-825cb0f78ca6/linked_in?t=rgb4io" target="_blank" rel="noopener noreferrer" class="card border-0 text-dark cert-card h-100">
+                        <img class="card-img-top" src="certimages/Microsoft/microsoft.jpg" alt="Microsoft Azure SC-900 Security, Compliance and Identity Fundamentals">
+                        <span class="card-body">
+                            <h4 class="title mt-4">Microsoft Azure SC-900</h4>
+                            <p class="xs-font cert-card-sub">Fundamentals</p>
+                        </span>
+                    </a>
+                </div>
+
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <a href="https://www.credly.com/badges/f4ae5954-b0ee-48b4-ac94-8577179764e3/linked_in?t=rdp2ua" target="_blank" rel="noopener noreferrer" class="card border-0 text-dark cert-card h-100">
+                        <img class="card-img-top" src="certimages/Cisco/cisco.jpg" alt="CyberOps Cisco Networking Academy">
                         <span class="card-body">
                             <h4 class="title mt-4">CCNAv7 e CyberOps</h4>
-                            <p class="xs-font">Associate</p>
+                            <p class="xs-font cert-card-sub">Associate</p>
                         </span>
                     </a>
                 </div>
-                
-                <div class="col-lg-4">
-                    <a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=BF69017652E97A0E49EE2FE4B5222ABA72A307D7CC54A9F3A140A27ACC54452E" target="_blank" class="card border-0 text-dark">
-                        <img class="card-img-top" src="assets/imgs/oracle2.jpg" alt="Oracle Cloud Security">
-                        <span class="card-body">
-                            <h4 class="title mt-4">Oracle Cloud Infrastructure</h4>
-                            <p class="xs-font">Security</p>
-                        </span>
-                        
-                    </a>
-                    <a href="certify.html" class="item expertises-item">
-                        <strong>Todos os Certificados</strong></a>                
-                    
-                </div>
-                
-    </div></div></section>
-    
-       
-    <section class="section" id="portfolio">        
-        
-        <div class="container">        
-             <h3 class="section-title pb-4">Portfólio</h3>
-        </div>
+            </div>
 
-        <div id="owl-portfolio" class="owl-carousel owl-theme mt-4">          
-            <a href="javascript:void(0)" class="item expertises-item">
-            <img src="assets/imgs/github.jpg"alt="Github" class="box-shadow"><p><h6 style="color: rgb(182, 180, 180);" class="font-semismall">* arraste para o lado caso esteja usando um smartphone</h6></p>
-            <h6 class="mt-3 mb-2 font-small"><a href="https://github.com/Siluryan" target="_blank"><p>GitHub é uma plataforma de hospedagem de código-fonte
-                    com controle de versão usando o Git. 
-                    Ele permite que programadores contribuam em projetos de qualquer lugar do mundo</p>Confira meus projetos clicando aqui</a></h6>                
-            </a>
-   
+            <div class="text-center mt-4">
+                <a href="certify.html" class="btn btn-outline-primary btn-catalog px-4">Ver todos os cursos e certificados</a>
+            </div>
         </div>
-    </section>    
+    </section>
+    <section class="section section-portfolio" id="portfolio">
+        <div class="container portfolio-github-wrap text-center">
+            <h3 class="section-title section-portfolio-heading">Portfólio</h3>
+            <a href="https://github.com/Siluryan" target="_blank" rel="noopener noreferrer" class="portfolio-github-figure" aria-describedby="portfolio-github-desc">
+                <img src="assets/imgs/github.jpg" alt="">
+                <span class="sr-only">Abrir o perfil GitHub (Siluryan) e ver repositórios</span>
+            </a>
+            <p id="portfolio-github-desc" class="portfolio-github-copy">GitHub é uma plataforma de hospedagem de código-fonte com controle de versão usando o Git. Permite que programadores colaborem em projetos de qualquer lugar do mundo; os repositórios e exemplos de código estão no perfil ligado à imagem acima.</p>
+        </div>
+    </section>
 
     <section class="section bg-overlay">
         <div class="container">
@@ -342,7 +376,7 @@ escrevi ao longo da minha vida. Através deles você vai conhecer um pouco
                             <p class="py-2">Sinta-se a vontade para entrar em contato</p>
                             <p class="py-2"><i class="ti-location-pin"></i> Marília, São Paulo</p>
                             <p class="py-2"><i class="ti-email"></i>  guilhermerrdias@gmail.com</p>
-                            <p class="py-2"><i class="ti-microphone"></i> (14) 99692-1397</p>
+                            <p class="py-2"><i class="ti-microphone"></i> (14) 99138-2135</p>
 
                         </li>
                     </ul> 
@@ -385,17 +419,17 @@ escrevi ao longo da minha vida. Através deles você vai conhecer um pouco
 
     <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 
+    <script>
+        function onClick(e) {
+            e.preventDefault();
+            grecaptcha.ready(function() {
+                grecaptcha.execute('SITE_KEY?OU_SECRET?MAISPROVAVELSITE', { action: 'submit' }).then(function(token) {
+                    var response = document.getElementById('token_generate');
+                    if (response) response.value = token;
+                });
+            });
+        }
+    </script>
+
 </body>
 </html>
-<script>
-    function onClick(e) {
-      e.preventDefault();
-      grecaptcha.ready(function() {
-        grecaptcha.execute('SITE_KEY?OU_SECRET?MAISPROVAVELSITE', {action: 'submit'}).then(function(token) {
-            // Add your logic to submit to your backend server here.
-            var response = document.getElementById('token_generate');
-            response.value = token;
-        });
-      });
-    }
-</script>
